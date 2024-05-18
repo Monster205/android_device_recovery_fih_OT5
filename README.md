@@ -1,2 +1,10 @@
-# device_recovery_fih_OT5
- test
+# Android device tree for TCL T508N (OT5)
+
+```
+#
+# Copyright (C) 2024 The Android Open Source Project
+# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+```
