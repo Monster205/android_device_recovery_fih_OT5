@@ -134,11 +134,12 @@ on property:sys.usb.config=fastboot
 
 on property:sys.usb.config=none && property:sys.usb.configfs=0
     stop adbd
+
     stop fastbootd
     write /sys/class/android_usb/android0/enable 0
     setprop sys.usb.state ${sys.usb.config}
 
-on property:sys.usb.config=adb && property:sys.usb.configfs=0
+ooon property:sys.usb.config=adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/idProduct D001
     write /sys/class/android_usb/android0/functions adb
     write /sys/class/android_usb/android0/enable 1
@@ -185,3 +186,6 @@ on property:sys.usb.config=fastboot && property:sys.usb.ffs.ready=1 && property:
     symlink /config/usb_gadget/g1/functions/ffs.fastboot /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
+
+ro.adb.secure=0
+ro.boot.dynamic_partitions=true

@@ -1,0 +1,31 @@
+
+# mount point          fstype  device                                        device2              flags
+/metadata              f2fs    /dev/block/bootdevice/by-name/metadata                             flags=display="Metadata";backup=1;wrappedkey
+/data                  f2fs    /dev/block/bootdevice/by-name/userdata				fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,reservedsize=128M,checkpoint=fs,formattableosuid,errors=panic wait,formattable,first_stage_mount,check
+
+# Boot
+/boot                  emmc    /dev/block/bootdevice/by-name/boot                                 flags=backup=1;slotselect;flashimg=1
+/dtbo                  emmc    /dev/block/bootdevice/by-name/dtbo                                 flags=backup=1;slotselect;display="Dtbo";flashimg=1
+/misc                  emmc    /dev/block/bootdevice/by-name/misc                                 flags=display="misc";backup=1;flashimg=1
+/recovery                  emmc    /dev/block/bootdevice/by-name/recovery                                 flags=backup=1;slotselect;flashimg=1
+
+# Firmware partitions
+/spl                 emmc      /dev/block/mmcblk0boot0              flags=display=spl;slotselect;flashimg=1
+/spl_bk              emmc      /dev/block/mmcblk0boot1              flags=display=spl_bk;flashimg=1
+/uboot               emmc      /dev/block/by-name/uboot             flags=display=uboot;slotselect;flashimg=1
+/sml                 emmc      /dev/block/by-name/sml               flags=display=sml;slotselect;flashimg=1
+/tos                 emmc      /dev/block/by-name/trustos           flags=display=tos;slotselect;flashimg=1
+/teecfg              emmc      /dev/block/by-name/teecfg            flags=display=teecfg;slotselect;flashimg=1
+/persist             emmc      /dev/block/by-name/persist           flags=display=persis;flashimg=1t
+/logo                emmc      /dev/block/by-name/logo              flags=display=logo;flashimg=1
+/ltedsp              emmc      /dev/block/by-name/l_ldsp            flags=display=ltedsp;slotselect;flashimg=1
+/ltegdsp             emmc      /dev/block/by-name/l_gdsp            flags=display=ltegdsp;slotselect;flashimg=1
+/ltemodem            emmc      /dev/block/by-name/l_modem           flags=display=ltemodem;slotselect;flashimg=1
+/ltefixnv1           emmc      /dev/block/by-name/l_fixnv1          flags=display=ltefixnv1;flashimg=1
+/ltefixnv2           emmc      /dev/block/by-name/l_fixnv2          flags=display=ltefixnv2;flashimg=1
+/lteruntimenv1       emmc      /dev/block/by-name/l_runtimenv1      flags=display=lteruntimenv1;flashimg=1
+/lteruntimenv2       emmc      /dev/block/by-name/l_runtimenv2      flags=display=lteruntimenv2;flashimg=1
+/wcnmodem            emmc      /dev/block/by-name/wcnmodem          flags=display=wcnmodem;slotselect;flashimg=1
+/gnssmodem           emmc      /dev/block/by-name/gnssmodem         flags=display=gnssmodem;slotselect;flashimg=1
+/pmsys               emmc      /dev/block/by-name/pm_sys            flags=display=pmsys;slotselect;flashimg=1
+
