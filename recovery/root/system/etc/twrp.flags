@@ -29,3 +29,7 @@
 /gnssmodem           emmc      /dev/block/by-name/gnssmodem         flags=display=gnssmodem;slotselect;flashimg=1
 /pmsys               emmc      /dev/block/by-name/pm_sys            flags=display=pmsys;slotselect;flashimg=1
 
+# Removable storage
+/usb_otg               auto    /dev/block/sdg1                            /dev/block/sdg          flags=fsflags=utf8;display="USB-OTG";storage;wipeingui;removable
+
+
