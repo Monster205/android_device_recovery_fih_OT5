@@ -123,6 +123,8 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_DEFAULT_LANGUAGE := zh_CN # 默认为中文
 RECOVERY_SDCARD_ON_DATA := true
 TW_INCLUDE_FASTBOOTD := true # 包括fastbootd，为动态分区
+TW_BACKUP_EXCLUSIONS := /data/fonts
+
 # fstab
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
