@@ -187,5 +187,3 @@ on property:sys.usb.config=fastboot && property:sys.usb.ffs.ready=1 && property:
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
-ro.adb.secure=0
-ro.boot.dynamic_partitions=true
